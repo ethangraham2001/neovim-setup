@@ -69,6 +69,16 @@ require("lspconfig").pyright.setup {
 
 -- latex with ltex-ls
 require("lspconfig").ltex.setup {
+    filetypes = {'markdown', 'latex'},
     on_attach = on_attach,
+    capabilities = {
+    textDocument = {
+      completion = {
+        completionItem = {
+          triggerCharacters = {}
+        }
+      }
+    }
+  }
 }
 
