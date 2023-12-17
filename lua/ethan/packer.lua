@@ -16,6 +16,9 @@ return require('packer').startup(function(use)
 		end
 	})
 	-- END: Colorscheme
+    -- BEGIN: Status Bar
+    use 'feline-nvim/feline.nvim'
+    -- END: Status Bar
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- install treesitter
 

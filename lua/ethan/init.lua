@@ -27,4 +27,5 @@ require("ethan.remap")
 require("ethan.packer")
 require("ethan.set")
 require("ethan.lsp")
+require("ethan.statusline")
 
