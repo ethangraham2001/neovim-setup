@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
 	-- END: Colorscheme
     -- BEGIN: Status Bar
     use 'feline-nvim/feline.nvim'
+    use "Hitesh-Aggarwal/feline_one_monokai.nvim"
     -- END: Status Bar
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- install treesitter
@@ -53,4 +54,7 @@ return require('packer').startup(function(use)
     use "hrsh7th/cmp-nvim-lsp"
     use "saadparwaiz1/cmp_luasnip"
     -- END: nvim-cmp autocomplete
+    --
+    -- rust-tools
+    use 'simrat39/rust-tools.nvim'
 end)

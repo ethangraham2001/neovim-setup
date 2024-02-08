@@ -2,7 +2,21 @@ require("nvim-lsp-installer").setup{}
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd", "pyright", "ltex"}
+    ensure_installed = { "lua_ls", "clangd", "pyright", "ltex", "rust_analyzer",
+                        "kotlin_language_server"}
+})
+
+local rt = require("rust-tools")
+
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
 })
 
 
@@ -44,9 +58,8 @@ cmp.setup({
 })
 
 local on_attach = function(_, _)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {}) 
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {}) 
-
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
     vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
@@ -66,6 +79,23 @@ require("lspconfig").clangd.setup {
     }
 }
 
+-- rust with rust_analyzer
+require("lspconfig").rust_analyzer.setup {
+    on_attach = on_attach,
+    settings = {
+        ['rust_analyzer'] = {
+            cargo = {
+                allFeatures = true,
+            }
+        }
+    }
+}
+
+-- kotlin with lsp kotlin language server
+require("lspconfig").kotlin_language_server.setup{
+    on_attach = on_attach,
+}
+
 -- Python with pyright
 require("lspconfig").pyright.setup {
     on_attach = on_attach,
@@ -73,7 +103,7 @@ require("lspconfig").pyright.setup {
 
 -- latex with ltex-ls
 require("lspconfig").ltex.setup {
-    filetypes = {'markdown', 'latex'},
+    filetypes = {'latex'},
     on_attach = on_attach,
     capabilities = {
     textDocument = {
