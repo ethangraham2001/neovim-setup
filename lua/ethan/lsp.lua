@@ -2,8 +2,7 @@ require("nvim-lsp-installer").setup{}
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd", "pyright", "ltex", "rust_analyzer",
-                        "kotlin_language_server"}
+    ensure_installed = { "lua_ls", "clangd", "pyright", "ltex", "rust_analyzer"}
 })
 
 local rt = require("rust-tools")
@@ -68,6 +67,10 @@ end
 
 -- LUA with LUA_LS
 require("lspconfig").lua_ls.setup {
+    on_attach = on_attach
+}
+
+require("lspconfig").metals.setup {
     on_attach = on_attach
 }
 
