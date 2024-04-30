@@ -17,4 +17,4 @@ function ColorScheme(scheme_name)
     vim.cmd('colorscheme ' .. scheme_name)
 end
 
-TransparentBackground(false)
+TransparentBackground(true)
