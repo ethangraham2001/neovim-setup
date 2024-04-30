@@ -8,15 +8,33 @@ local map = vim.keymap.set
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
+    use 'tjdevries/colorbuddy.vim'
 
 	-- BEGIN: Colorscheme
 	use ( {
 		"ellisonleao/gruvbox.nvim",
 		as = 'gruvbox',
-		config = function()
-			vim.cmd('colorscheme gruvbox')
-		end
 	})
+
+    -- MONOKAI
+    --[[
+    use ({
+        "loctvl842/monokai-pro.nvim",
+        as = 'monokai',
+        config = function()
+            vim.cmd('colorscheme monokai-pro')
+        end
+    })]]--
+    --[[
+    use ({
+        'tanvirtin/monokai.nvim',
+        config = function()
+            -- require('monokai').setup() { palette = require('monokai').soda }
+            vim.cmd('colorscheme monokai_soda')
+        end
+    })
+    --]]
+
 	-- END: Colorscheme
     -- BEGIN: Status Bar
     use 'feline-nvim/feline.nvim'

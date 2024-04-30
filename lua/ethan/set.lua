@@ -2,6 +2,7 @@ vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.cmd('highlight CursorLineNr ctermfg=blue')
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -31,3 +32,13 @@ vim.o.showmode = false
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+function SetTabs(val)
+    vim.opt.tabstop = val  -- Set the width of a tab
+    vim.opt.shiftwidth = val  -- Set the amount of space to use for each step of (auto)indent
+    vim.opt.softtabstop = val  -- Set the number of spaces that a <Tab> in the file counts for
+end
+
+function SetCol(val)
+    vim.opt.colorcolumn = tostring(val)
+end

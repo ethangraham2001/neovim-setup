@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["colorbuddy.vim"] = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/colorbuddy.vim",
+    url = "https://github.com/tjdevries/colorbuddy.vim"
+  },
   ["feline.nvim"] = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/feline.nvim",
@@ -110,7 +115,6 @@ _G.packer_plugins = {
     url = "https://github.com/Hitesh-Aggarwal/feline_one_monokai.nvim"
   },
   gruvbox = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme gruvbox\bcmd\bvim\0" },
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
@@ -186,17 +190,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gruvbox
-time([[Config for gruvbox]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme gruvbox\bcmd\bvim\0", "config", "gruvbox")
-time([[Config for gruvbox]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType sbt ++once lua require("packer.load")({'nvim-metals'}, { ft = "sbt" }, _G.packer_plugins)]]
 vim.cmd [[au FileType scala ++once lua require("packer.load")({'nvim-metals'}, { ft = "scala" }, _G.packer_plugins)]]
 vim.cmd [[au FileType java ++once lua require("packer.load")({'nvim-metals'}, { ft = "java" }, _G.packer_plugins)]]
+vim.cmd [[au FileType sbt ++once lua require("packer.load")({'nvim-metals'}, { ft = "sbt" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 
