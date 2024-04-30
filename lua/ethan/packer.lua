@@ -11,29 +11,24 @@ return require('packer').startup(function(use)
     use 'tjdevries/colorbuddy.vim'
 
 	-- BEGIN: Colorscheme
-	use ( {
+	use ({
 		"ellisonleao/gruvbox.nvim",
 		as = 'gruvbox',
 	})
-
     -- MONOKAI
-    --[[
     use ({
         "loctvl842/monokai-pro.nvim",
         as = 'monokai',
-        config = function()
-            vim.cmd('colorscheme monokai-pro')
-        end
-    })]]--
-    --[[
-    use ({
-        'tanvirtin/monokai.nvim',
-        config = function()
-            -- require('monokai').setup() { palette = require('monokai').soda }
-            vim.cmd('colorscheme monokai_soda')
-        end
     })
-    --]]
+    -- AYU
+    use ({
+        'Shatur/neovim-ayu',
+        as = 'ayu',
+    })
+
+    use ({
+        'pineapplegiant/spaceduck'
+    })
 
 	-- END: Colorscheme
     -- BEGIN: Status Bar

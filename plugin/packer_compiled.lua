@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ayu = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/ayu",
+    url = "https://github.com/Shatur/neovim-ayu"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -129,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  monokai = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/monokai",
+    url = "https://github.com/loctvl842/monokai-pro.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -181,6 +191,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  spaceduck = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/spaceduck",
+    url = "https://github.com/pineapplegiant/spaceduck"
   },
   ["telescope.nvim"] = {
     loaded = true,
