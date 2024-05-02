@@ -2,11 +2,11 @@ require("nvim-lsp-installer").setup{}
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd", "pyright", "ltex", "rust_analyzer"}
+    ensure_installed = { "lua_ls", "clangd", "pyright", "ltex", "rust_analyzer",
+    "gopls"}
 })
 
 local rt = require("rust-tools")
-
 rt.setup({
   server = {
     on_attach = function(_, bufnr)
@@ -17,8 +17,6 @@ rt.setup({
     end,
   },
 })
-
-
 
 local cmp = require("cmp")
 
@@ -81,6 +79,13 @@ require("lspconfig").clangd.setup {
         debounce_text_changes = 150,
     }
 }
+
+-- GO
+require("lspconfig").gopls.setup {
+    on_attach = on_attach
+}
+
+
 
 -- rust with rust_analyzer
 require("lspconfig").rust_analyzer.setup {

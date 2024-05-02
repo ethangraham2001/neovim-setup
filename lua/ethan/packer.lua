@@ -25,9 +25,24 @@ return require('packer').startup(function(use)
         'Shatur/neovim-ayu',
         as = 'ayu',
     })
-
+    -- SPACEDUCK
     use ({
         'pineapplegiant/spaceduck'
+    })
+    -- CATPUCCIN
+    use ({
+        "catppuccin/nvim",
+        as = "catppuccin"
+    })
+    -- ROSÉ PINE
+    use({
+        "rose-pine/neovim",
+        as = "rose-pine"
+    })
+    -- NEWPAPER
+    use({
+        'yorik1984/newpaper.nvim',
+        as = 'newpaper'
     })
 
 	-- END: Colorscheme
@@ -50,6 +65,10 @@ return require('packer').startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
+    }
+
+    use {
+        'crispgm/nvim-go'
     }
     -- END: LSP
     --
