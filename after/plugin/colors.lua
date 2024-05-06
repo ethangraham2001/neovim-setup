@@ -31,4 +31,3 @@ function NextColorScheme()
 end
 vim.keymap.set("n", "<leader>nc", ":lua NextColorScheme()<cr>")
 
-TransparentBackground(true)
