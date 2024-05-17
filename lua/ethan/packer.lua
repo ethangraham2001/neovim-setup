@@ -45,6 +45,9 @@ return require('packer').startup(function(use)
         as = 'newpaper'
     })
 
+    -- NIGHTFOX
+    use "EdenEast/nightfox.nvim"
+
 	-- END: Colorscheme
     -- BEGIN: Status Bar
     use 'feline-nvim/feline.nvim'
