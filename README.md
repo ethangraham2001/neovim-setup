@@ -11,6 +11,13 @@ install plugins.
 :lua ColorScheme('theme-name')
 ```
 
+Configured options are
+
+- `'gruvbox'`
+- `'dayfox'`
+- `'carbonfox'`
+- `'monokai-pro'`
+
 Or using `<leader>nc` to cycle through colors round-robin.
 
 Options available in `packer.lua`
