@@ -20,6 +20,10 @@ return require('packer').startup(function(use)
         "loctvl842/monokai-pro.nvim",
         as = 'monokai',
     })
+
+    --MOLOKAI (dark monokai)
+    use 'UtkarshVerma/molokai.nvim'
+
     -- AYU
     use ({
         'Shatur/neovim-ayu',
@@ -48,13 +52,16 @@ return require('packer').startup(function(use)
     -- NIGHTFOX
     use "EdenEast/nightfox.nvim"
 
+    -- NEOFUSION
+    use "diegoulloao/neofusion.nvim"
+
 	-- END: Colorscheme
     -- BEGIN: Status Bar
-    use 'feline-nvim/feline.nvim'
-    use "Hitesh-Aggarwal/feline_one_monokai.nvim"
+    -- use 'feline-nvim/feline.nvim'
+    -- use "Hitesh-Aggarwal/feline_one_monokai.nvim"
     -- END: Status Bar
 
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- install treesitter
+	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',
@@ -234,6 +241,13 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         },
     }
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+
     -- END: Tree
     -- BEGIN: nvim-cmp autocomplete
     use "hrsh7th/nvim-cmp"
@@ -249,4 +263,17 @@ return require('packer').startup(function(use)
 
     -- plenary (for scala metals)
     use "nvim-lua/plenary.nvim"
+
+    -- Vimtex
+    use {
+        'lervag/vimtex',
+        -- tag = 'v2.15',
+        config = function()
+            -- Optional: Vimtex configuration
+            vim.g.tex_flavor = 'latex'
+            vim.g.vimtex_view_method = 'zathura'
+            vim.g.vimtex_quickfix_mode = 0
+            -- Add any other Vimtex configuration here
+        end
+    }
 end)
