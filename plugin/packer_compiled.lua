@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/ethan/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?.lua;/home/ethan/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?/init.lua;/home/ethan/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?.lua;/home/ethan/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/ethan/.cache/nvim/packer_hererocks/2.1.1692716794/lib/lua/5.1/?.so"
+local package_path_str = "/home/ethan/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?.lua;/home/ethan/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?/init.lua;/home/ethan/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?.lua;/home/ethan/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/ethan/.cache/nvim/packer_hererocks/2.1.1713484068/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -114,20 +114,15 @@ _G.packer_plugins = {
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/colorbuddy.vim",
     url = "https://github.com/tjdevries/colorbuddy.vim"
   },
-  ["feline.nvim"] = {
-    loaded = true,
-    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/feline.nvim",
-    url = "https://github.com/feline-nvim/feline.nvim"
-  },
-  ["feline_one_monokai.nvim"] = {
-    loaded = true,
-    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/feline_one_monokai.nvim",
-    url = "https://github.com/Hitesh-Aggarwal/feline_one_monokai.nvim"
-  },
   gruvbox = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -139,10 +134,20 @@ _G.packer_plugins = {
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["molokai.nvim"] = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/molokai.nvim",
+    url = "https://github.com/UtkarshVerma/molokai.nvim"
+  },
   monokai = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/monokai",
     url = "https://github.com/loctvl842/monokai-pro.nvim"
+  },
+  ["neofusion.nvim"] = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/neofusion.nvim",
+    url = "https://github.com/diegoulloao/neofusion.nvim"
   },
   newpaper = {
     loaded = true,
@@ -175,7 +180,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-metals"] = {
-    config = { "\27LJ\2\nI\0\0\3\1\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0-\2\0\0B\0\2\1K\0\1\0\1À\25initialize_or_attach\vmetals\frequireÀ\1\1\2\b\0\r\0\0196\2\0\0009\2\1\0029\2\2\2'\4\3\0005\5\4\0B\2\3\0026\3\0\0009\3\1\0039\3\5\3'\5\6\0005\6\b\0009\a\a\0=\a\t\0063\a\n\0=\a\v\6=\2\f\6B\3\3\0012\0\0€K\0\1\0\ngroup\rcallback\0\fpattern\1\0\0\aft\rFileType\24nvim_create_autocmd\1\0\1\nclear\2\16nvim-metals\24nvim_create_augroup\bapi\bvim\0" },
+    config = { "\27LJ\2\nI\0\0\3\1\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0-\2\0\0B\0\2\1K\0\1\0\1À\25initialize_or_attach\vmetals\frequireÚ\1\1\2\b\0\r\0\0196\2\0\0009\2\1\0029\2\2\2'\4\3\0005\5\4\0B\2\3\0026\3\0\0009\3\1\0039\3\5\3'\5\6\0005\6\b\0009\a\a\0=\a\t\0063\a\n\0=\a\v\6=\2\f\6B\3\3\0012\0\0€K\0\1\0\ngroup\rcallback\0\fpattern\1\0\3\fpattern\0\ngroup\0\rcallback\0\aft\rFileType\24nvim_create_autocmd\1\0\1\nclear\2\16nvim-metals\24nvim_create_augroup\bapi\bvim\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -226,10 +231,20 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  vimtex = {
+    config = { "\27LJ\2\n‚\1\0\0\2\0\a\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\0\0=\1\6\0K\0\1\0\25vimtex_quickfix_mode\fzathura\23vimtex_view_method\nlatex\15tex_flavor\6g\bvim\0" },
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: vimtex
+time([[Config for vimtex]], true)
+try_loadstring("\27LJ\2\n‚\1\0\0\2\0\a\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\0\0=\1\6\0K\0\1\0\25vimtex_quickfix_mode\fzathura\23vimtex_view_method\nlatex\15tex_flavor\6g\bvim\0", "config", "vimtex")
+time([[Config for vimtex]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
