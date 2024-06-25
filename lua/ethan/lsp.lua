@@ -63,6 +63,18 @@ local on_attach = function(_, _)
     vim.keymap.set('n', 'K',  vim.lsp.buf.hover, {})
 end
 
+local on_attach_gopls = function(client, bufnr)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
+    vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
+    vim.keymap.set('n', 'K',  vim.lsp.buf.hover, {})
+    -- Disable diagnostics/linting on save
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+end
+
 -- LUA with LUA_LS
 require("lspconfig").lua_ls.setup {
     on_attach = on_attach
@@ -82,10 +94,13 @@ require("lspconfig").clangd.setup {
 
 -- GO
 require("lspconfig").gopls.setup {
-    on_attach = on_attach
+    on_attach = on_attach,
+    settings = {
+        gopls = {
+            disableInComments = true
+        }
+    }
 }
-
-
 
 -- rust with rust_analyzer
 require("lspconfig").rust_analyzer.setup {
@@ -107,20 +122,5 @@ require("lspconfig").kotlin_language_server.setup{
 -- Python with pyright
 require("lspconfig").pyright.setup {
     on_attach = on_attach,
-}
-
--- latex with ltex-ls
-require("lspconfig").ltex.setup {
-    filetypes = {'latex'},
-    on_attach = on_attach,
-    capabilities = {
-    textDocument = {
-      completion = {
-        completionItem = {
-          triggerCharacters = {}
-        }
-      }
-    }
-  }
 }
 
