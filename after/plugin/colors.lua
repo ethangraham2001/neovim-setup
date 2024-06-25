@@ -17,7 +17,7 @@ function ColorScheme(scheme_name)
     vim.cmd('colorscheme ' .. scheme_name)
 end
 
-local color_scheme_names = {'gruvbox', 'dayfox', 'carbonfox', 'monokai-pro'}
+local color_scheme_names = {'gruvbox', 'newpaper', 'carbonfox', 'monokai-pro'}
 local curr_scheme_idx = 1
 
 function NextColorScheme()
