@@ -11,13 +11,22 @@ end
 require('gruvbox').setup({
     contrast = "hard",
 })
-vim.cmd('colorscheme gruvbox');
+
+vim.cmd[[
+  augroup SpaceDuckOverrides
+    autocmd!
+    autocmd ColorScheme spaceduck highlight Comment guifg=#8888AA gui=italic
+  augroup END
+]]
+
+-- default colorscheme
+vim.cmd('colorscheme rose-pine');
 
 function ColorScheme(scheme_name)
     vim.cmd('colorscheme ' .. scheme_name)
 end
 
-local color_scheme_names = {'gruvbox', 'newpaper', 'carbonfox', 'monokai-pro'}
+local color_scheme_names = {'spaceduck', 'newpaper', 'carbonfox', 'monokai-pro'}
 local curr_scheme_idx = 1
 
 function NextColorScheme()
@@ -30,4 +39,3 @@ function NextColorScheme()
     ColorScheme(nextScheme)
 end
 vim.keymap.set("n", "<leader>nc", ":lua NextColorScheme()<cr>")
-

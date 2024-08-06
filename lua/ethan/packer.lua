@@ -233,7 +233,7 @@ return require('packer').startup(function(use)
 
 }
     -- END: Metals LSP for Scala
-    --
+
     -- BEGIN: Tree
     use {
         'nvim-tree/nvim-tree.lua',
@@ -241,14 +241,25 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         },
     }
-
+    -- END: Tree
+    -- BEGIN: Lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+    -- END: Lualine
 
+	-- BEGIN: barbar
+	-- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+	-- use 'romgrk/barbar.nvim'
+	-- END: barbar
 
-    -- END: Tree
+    -- BEGIN: indent-lines
+    use {
+        "lukas-reineke/indent-blankline.nvim"
+    }
+    -- END: indent-lines
+
     -- BEGIN: nvim-cmp autocomplete
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
