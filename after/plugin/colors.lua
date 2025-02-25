@@ -20,10 +20,20 @@ vim.cmd[[
 ]]
 
 -- default colorscheme
-vim.cmd('colorscheme rose-pine');
+vim.cmd('colorscheme ayu');
 
 function ColorScheme(scheme_name)
     vim.cmd('colorscheme ' .. scheme_name)
+end
+
+function Darkify()
+    vim.cmd([[
+    highlight Normal guibg=#000000 ctermbg=0
+    highlight NormalNC guibg=#000000 ctermbg=0
+    highlight LineNr guibg=#000000 ctermbg=0
+    highlight SignColumn guibg=#000000 ctermbg=0
+    highlight VertSplit guibg=#000000 ctermbg=0
+    ]])
 end
 
 local color_scheme_names = {'spaceduck', 'newpaper', 'carbonfox', 'monokai-pro'}

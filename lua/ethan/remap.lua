@@ -6,4 +6,3 @@ vim.keymap.set("n", "<leader>d", ':lua vim.diagnostic.open_float(0, {scope="line
 vim.keymap.set("n", "<leader>pwd", ":lua print(vim.fn.expand(\"%:p:h\"))<CR>", opts)
 vim.keymap.set('n', '<leader>ne', vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 vim.keymap.set('n', '<leader>pe', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
-

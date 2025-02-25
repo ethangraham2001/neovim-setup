@@ -305,4 +305,11 @@ return require('packer').startup(function(use)
 			require('render-markdown').setup({})
 		end,
 	})
+
+	use "tamarin-prover/editors"
+
+	use({
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	})
 end)
