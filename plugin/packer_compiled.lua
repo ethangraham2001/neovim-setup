@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/colorbuddy.vim",
     url = "https://github.com/tjdevries/colorbuddy.vim"
   },
+  ["conform.nvim"] = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/conform.nvim",
+    url = "https://github.com/stevearc/conform.nvim"
+  },
   editors = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/editors",
@@ -185,11 +190,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-go"] = {
-    loaded = true,
-    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/nvim-go",
-    url = "https://github.com/crispgm/nvim-go"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -266,6 +266,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
+  },
+  tokyonight = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/tokyonight",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   vimtex = {
     config = { "\27LJ\2\n‚\1\0\0\2\0\a\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\0\0=\1\6\0K\0\1\0\25vimtex_quickfix_mode\fzathura\23vimtex_view_method\nlatex\15tex_flavor\6g\bvim\0" },

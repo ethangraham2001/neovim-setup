@@ -48,6 +48,10 @@ return require('packer').startup(function(use)
 		'yorik1984/newpaper.nvim',
 		as = 'newpaper'
 	})
+	use({
+		"folke/tokyonight.nvim",
+		as = "tokyonight"
+	})
 
 	-- NIGHTFOX
 	use "EdenEast/nightfox.nvim"
@@ -77,9 +81,6 @@ return require('packer').startup(function(use)
 		"neovim/nvim-lspconfig",
 	}
 
-	use {
-		'crispgm/nvim-go'
-	}
 	-- END: LSP
 	--
 	-- BEGIN: Metals LSP for Scala
@@ -296,6 +297,15 @@ return require('packer').startup(function(use)
 	}
 
 	use({
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	})
+
+	use({
+		"stevearc/conform.nvim"
+	})
+
+	use({
 		'MeanderingProgrammer/render-markdown.nvim',
 		after = { 'nvim-treesitter' },
 		requires = { 'echasnovski/mini.nvim', opt = true }, -- if you use the mini.nvim suite
@@ -308,8 +318,4 @@ return require('packer').startup(function(use)
 
 	use "tamarin-prover/editors"
 
-	use({
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	})
 end)

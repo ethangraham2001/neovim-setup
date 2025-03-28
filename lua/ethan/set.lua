@@ -2,12 +2,14 @@ vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.cmd('highlight CursorLineNr ctermfg=blue')
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+vim.cmd('highlight CursorLineNr ctermfg=red gui=bold')
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 

@@ -20,7 +20,7 @@ vim.cmd[[
 ]]
 
 -- default colorscheme
-vim.cmd('colorscheme ayu');
+vim.cmd('colorscheme tokyonight-night');
 
 function ColorScheme(scheme_name)
     vim.cmd('colorscheme ' .. scheme_name)
@@ -49,3 +49,9 @@ function NextColorScheme()
     ColorScheme(nextScheme)
 end
 vim.keymap.set("n", "<leader>nc", ":lua NextColorScheme()<cr>")
+
+function AOS()
+	vim.cmd('colorscheme monokai-pro-classic')
+	Darkify()
+	vim.cmd('set expandtab')
+end
